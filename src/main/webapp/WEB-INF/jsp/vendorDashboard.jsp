@@ -131,7 +131,36 @@
 					</div>
 				</div>
 			</div>
-			<div id="menu1" class="tab-pane fade"></div>
+			<div id="menu1" class="tab-pane fade">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Product Name</th>
+							<th scope="col">Category</th>
+							<th scope="col">Description</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Image</th>
+							<th scope="col">Manage</th>
+						</tr>
+					</thead>
+					<tbody>
+						 <c:forEach var="product" items="${products}">
+   
+						<tr>
+							<th scope="row">${product.productId }</th>
+							<td>${product.product_name }</td>
+							<td>${product.product_category }</td>
+							<td>${product.product_description }</td>
+							<td>${product.product_quantity }</td>
+							<td>${product.product_image }</td>
+							<td><a href="/edit">Edit</a>  <a href="/delete">Delete</a></td>
+							
+						</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 			<div id="menu2" class="tab-pane fade">
 				<div class="row centered-form">
 					<div
@@ -160,10 +189,10 @@
 												<select name="product_category" id="product_category"
 													class="form-control input-sm"
 													placeholder="Product category">
-													<option value="electronics">Electronics</option>
-													<option value="cars">Cars</option>
-													<option value="clothing">Clothes</option>
-													<option value="medicine">Medicines</option>
+													<c:forEach var="category" items="${products}">
+														<option value="${category.product_category}">${category.product_category}</option>
+													</c:forEach>
+													
 												</select>
 
 											</div>
@@ -174,6 +203,12 @@
 										<input type="text" name="product_description"
 											id="product_description" class="form-control input-sm"
 											placeholder="Product description">
+									</div>
+
+									<div class="form-group">
+										<input type="number" name="product_quantity"
+											id="product_quantity" class="form-control input-sm"
+											placeholder="Product quantity">
 									</div>
 
 									<div class="form-group">

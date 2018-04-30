@@ -15,6 +15,7 @@ public class Product {
 	private String product_name;
 	private String product_category;
 	private String product_description;
+	private int product_quantity;
 	private String product_image;
 	private int vendorId;
 	
@@ -47,6 +48,12 @@ public class Product {
 	}
 	public void setProduct_description(String product_description) {
 		this.product_description = product_description;
+	}
+	public int getProduct_quantity() {
+		return product_quantity;
+	}
+	public void setProduct_quantity(int product_quantity) {
+		this.product_quantity = product_quantity;
 	}
 	public String getProduct_image() {
 		return product_image;
