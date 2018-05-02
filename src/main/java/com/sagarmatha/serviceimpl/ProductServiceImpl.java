@@ -1,5 +1,7 @@
 package com.sagarmatha.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,12 @@ public class ProductServiceImpl implements ProductService {
 		
 		productRepository.save(product);
 
+	}
+
+	@Override
+	public List<Product> viewProduct() {
+		
+		return productRepository.findAll();
 	}
 
 }
