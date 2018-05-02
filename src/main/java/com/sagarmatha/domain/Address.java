@@ -1,21 +1,21 @@
 package com.sagarmatha.domain;
 
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
+
 @Table(name = "address")
 public class Address{
 	
-
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int addressId;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "address_id")
+	private Long addressId;
+
 	private String street;
 	
 	private String city;
@@ -26,8 +26,22 @@ public class Address{
 	
 	private String country;
 	
+	private String city;
 
-	
+	private String state;
+
+	private String country;
+
+	@Column(name = "zip_code")
+	private String zipCode;
+
+	public Long getAddressId() {
+		return addressId;
+	}
+
+	public void setAddressId(Long addressId) {
+		this.addressId = addressId;
+	}
 
 	public int getAddressId() {
 		return addressId;
@@ -82,7 +96,6 @@ public class Address{
 		return "Address [addressId=" + addressId + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode
 				+ ", state=" + state + ", country=" + country + "]";
 	}
-	
 	
 
 }
