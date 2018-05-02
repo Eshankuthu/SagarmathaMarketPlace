@@ -7,15 +7,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Address {
 
+@Table(name = "address")
+public class Address{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "address_id")
 	private Long addressId;
 
 	private String street;
-
+	
+	private String city;
+	
+	private String zipCode;
+	
+	private String state;
+	
+	private String country;
+	
 	private String city;
 
 	private String state;
@@ -33,12 +43,12 @@ public class Address {
 		this.addressId = addressId;
 	}
 
-	public String getStreet() {
-		return street;
+	public int getAddressId() {
+		return addressId;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
 	}
 
 	public String getCity() {
@@ -72,4 +82,20 @@ public class Address {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [addressId=" + addressId + ", street=" + street + ", city=" + city + ", zipCode=" + zipCode
+				+ ", state=" + state + ", country=" + country + "]";
+	}
+	
+
 }

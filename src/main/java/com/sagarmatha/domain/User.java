@@ -57,6 +57,10 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", role=" + role + "]";
+	}	
 
 }

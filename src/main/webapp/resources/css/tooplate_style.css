@@ -153,7 +153,8 @@ ul.list_bullet li a:hover { color: #4a545a }
 .col_43 { width: 667px }
 
 #site_title { float: left; }
-#site_title a { display: block; font-size: 22px; font-family: Georgia, "Times New Roman", Times, serif; width: 250px; height: 30px; color:white; /* text-indent: -10000px; background: url(../images/tooplate_logo.png) no-repeat center left */ }
+#site_title a { display: block; font-size: 22px; font-family: "Abel", "Times New Roman", Times, serif; width: 250px; height: 30px; color:white; 
+text-decoration-line: none; line-height: 1.4;/* text-indent: -10000px; background: url(../images/tooplate_logo.png) no-repeat center left */ }
 
 #tooplate_menu { float: right }
 
